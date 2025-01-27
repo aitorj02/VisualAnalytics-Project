@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Container Layout */
+#container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* Header */
+#header {
+  grid-area: header;
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search-bar {
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* Main Panel */
+#main-panel {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Overview Section */
+#overview {
+  grid-column: 1;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+#overview h2 {
+  font-size: 5.8rem;
+  margin-bottom: 15px;
+}
+
+.info-card .info-item {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.info-card .info-item h3 {
+  font-size: 1.2rem;
+  color: #3f51b5;
+  margin-bottom: 8px;
+}
+
+.info-card .info-item p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Chart Containers */
+#heatmap, #bar-chart, #scatter-original, #scatter-pca, #scatter-plot {
+  background-color: #e8eaf6;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Chart Titles */
+#heatmap h3, #bar-chart h3, #scatter-original h3, #scatter-pca h3, #scatter-plot h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+#footer {
+  grid-area: footer;
+  background-color: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+button {
+  background-color: #ff5722;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #main-panel {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+  #main-panel {
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: 1fr;
+    }
+}

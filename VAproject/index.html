@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ratings Visual Analytics</title>
+  <link rel="stylesheet" href="styles.css?v=1.0">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <!-- Header -->
+    <header id="header">
+      <h1>Movie Ratings Explorer</h1>
+        <!-- Search Bar -->
+      <input type="text" id="search-bar" placeholder="Search by title or genre..." />
+
+      <!-- Sidebar Filters -->
+      <div id="filters">
+        <div>
+          <label for="time-period">Time Period:</label>
+          <input type="range" id="time-period" min="1990" max="2018" value="2000" step="1" multiple />
+          <span id="time-period-label">2000</span>
+        </div>
+
+        <div>
+          <label for="rating-range">Rating Range:</label>
+          <input type="range" id="rating-range" min="0" max="5" value="3" step="0.5" multiple />
+          <span id="rating-range-label">3</span>
+      </div>
+    </div>
+    </header>
+
+
+    <!-- Main Panel -->
+    <main id="main-panel">
+      <!-- Overview Section -->
+      <section id="overview" class="info-card">
+        <h2>Overview</h2>
+        <div class="info-item">
+          <h3>Average Rating</h3>
+          <p><span id="avg-rating">3.50</span></p>
+        </div>
+        <div class="info-item">
+          <h3>Total Movies Rated</h3>
+          <p><span id="total-movies">9724</span></p>
+        </div>
+        <div class="info-item">
+          <h3>Total Ratings</h3>
+          <p><span id="total-ratings">100836</span></p>
+        </div>
+      </section>
+      
+
+        <div id="heatmap">
+          <h3>Heatmap: Genres vs. Ratings</h3>
+        </div>  
+
+        <div id="scatter-original" class="scatterplot">
+          <h3>Scatterplot: Total Ratings vs. Average Rating</h3>
+        </div>
+        <div id="bar-chart">
+          <h3>Bar Chart: Average Ratings by Genre</h3>
+        </div>
+       <div id="scatter-plot">
+          <h3>Scatter Plot: Trends Over Time</h3>
+        </div>
+        </section>
+
+        <div id="scatter-pca" class="scatterplot">
+          <h3>Scatterplot: PCA (PC1 vs. PC2)</h3>
+        </div>
+        <section>
+ 
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <button id="export">Export Insights</button>
+      <button id="share">Share</button>
+    </footer>
+  </div>
+  <script src="script.js?v=3.0"></script>
+</body>
+</html>
